@@ -1,0 +1,20 @@
+@import "tailwindcss";
+
+@theme {
+  --font-serif: "Cormorant Garamond", Georgia, serif;
+  --font-sans: "Plus Jakarta Sans", system-ui, -apple-system, sans-serif;
+  --color-spice-amber: #c87d20;
+  --color-spice-cinnamon: #9e4321;
+  --color-spice-cardamom: #2d5a3c;
+  --color-spice-turmeric: #e59819;
+  --color-spice-dark: #1b1612;
+  --color-spice-cream: #faf7f2;
+}
+
+body {
+  font-family: var(--font-sans);
+}
+
+.font-serif-title {
+  font-family: var(--font-serif);
+}
