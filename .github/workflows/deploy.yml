@@ -1,6 +1,4 @@
-- uses: actions/upload-pages-artifact@v3
-  with:
-    path: dist
+name: Deploy to GitHub Pages
 
 on:
   push:
@@ -19,19 +17,16 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: mehrban-traders---global-spice-&-agro-exporters   # change to your folder name if the app is in a subfolder
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: 22
       - run: npm install --legacy-peer-deps
       - run: npm run build
       - uses: actions/upload-pages-artifact@v3
         with:
-          path: mehrban-traders---global-spice-&-agro-exporters        # use YOUR_FOLDER/dist if the app is in a subfolder
+          path: dist
 
   deploy:
     needs: build
